@@ -1,0 +1,22 @@
+# This is a basic workflow that is manually triggered
+name: Sync to Azure DevOps
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Push to Azure DevOps
+        run: |
+          # Replace with your Azure DevOps repository URL
+          AZURE_REPO_URL="https://msazure@dev.azure.com/msazure/RedisCache/_git/TestRepository"
+          git remote add azure $AZURE_REPO_URL
+          git push azure HEAD:refs/heads/master
