@@ -17,6 +17,6 @@ jobs:
       - name: Push to Azure DevOps
         run: |
           # Replace with your Azure DevOps repository URL
-          AZURE_REPO_URL="https://msazure.visualstudio.com/DefaultCollection/RedisCache/_git/TestRepository.git"
-          git remote add azure $AZURE_REPO_URL
+          # AZURE_REPO_URL="https://msazure.visualstudio.com/DefaultCollection/RedisCache/_git/TestRepository.git"
+          git remote add azure https://msazure.visualstudio.com/DefaultCollection/RedisCache/_git/TestRepository.git
           git push azure HEAD:refs/heads/master
